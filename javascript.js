@@ -11,9 +11,8 @@ function getComputerChoice() {
 
 /* get the human choice */
 
-choice = prompt("Choose rock, paper or scissor")
-
 function getHumanChoice() {
+    choice = prompt("Choose rock, paper or scissor")
     if (choice.toLowerCase()=== "rock") {
         return "rock"
     } else if (choice.toLowerCase()==="paper") {
@@ -21,7 +20,8 @@ function getHumanChoice() {
     } else if (choice.toLowerCase()==="scissor"){
         return "scissor"
     } else {
-        N/A
+        alert("Invalid choice. Please enter rock, paper, or scissor.");
+        return getHumanChoice();
     }
 }
 
@@ -56,11 +56,15 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
+function playGame() {
+    for (var i=0; i<6; i++) {
+        let humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        console.log (humanSelection);
+        console.log (computerSelection);
+        console.log(playRound(humanSelection, computerSelection));
+    }
+}
 
+playGame();
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
-console.log(playRound(humanSelection, computerSelection));
-console.log (humanSelection)
-console.log (computerSelection)
