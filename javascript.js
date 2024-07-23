@@ -20,9 +20,17 @@ function getHumanChoice() {
         return "rock"
     } else if (choice.toLowerCase()==="paper") {
         return "paper"
-    } else {
+    } else if (choice.toLowerCase()==="scissor"){
         return "scissor"
+    } else {
+        N/A
     }
 }
 
 console.log(getHumanChoice());
+
+/* declare the players score variables */ 
+
+let humanScore = 0;
+let computerScore = 0;
+
