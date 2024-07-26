@@ -1,0 +1,11 @@
+button {
+    background-color: pink;
+}
+
+.HumanScore{
+    display: flex;
+}
+
+.ComputerScore{
+    display: flex;
+}

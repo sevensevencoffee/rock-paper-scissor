@@ -14,11 +14,20 @@ let humanScore = 0;
 let computerScore = 0;
 
 /* write the logic to play a single roud */
-let newDiv = document.querySelector("div");
+let newDiv = document.querySelector("#selection");
+let result;
+let textResult = document.createElement("p");
+
+newDiv.appendChild(textResult);
+
+const humanDisplayBoard = document.querySelector('#humanDisplayScore');
+
+const compDisplayBoard = document.querySelector('#compDisplayScore');
+//humanDisplayBoard;
 
 function playRound(humanChoice){
     const computerChoice = getComputerChoice();
-    let result;
+ 
     if (humanChoice === "rock" && computerChoice === "scissor"){
         humanScore++;
         result = `You win! Human: ${humanChoice} vs Computer: ${computerChoice} 
@@ -48,16 +57,15 @@ function playRound(humanChoice){
         ${humanScore} vs ${computerScore}`;
     }
 
-    
-    let textResult = document.createElement("p");
-
-    newDiv.appendChild(textResult);
 
     textResult.textContent = result;
-
+    humanDisplayBoard.textContent = humanScore;
+    compDisplayBoard.textContent = computerScore;
     checkForWinner();
 
 }
+
+
 
 function checkForWinner() {
     const maxScore = 5;
@@ -86,6 +94,7 @@ const scissor = document.querySelector("#scissor");
 rock.addEventListener("click", ()=> playRound("rock"));
 paper.addEventListener("click", ()=> playRound("paper"));
 scissor.addEventListener("click", ()=> playRound("scissor"));
+
 
 
 
